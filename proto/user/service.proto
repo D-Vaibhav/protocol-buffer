@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+// package is the most recent folder containing the .proto file
+package user;
+
+// path to the folder containing 
+// declare the package to which the generated go file belongs
+option go_package = "github.com/vaibhav/pb-demo/proto/user";
+
+import "proto/user/message.proto";
+import "proto/article/message.proto";
+
+
+service User {
+    rpc GetUserInfo(UserID) returns (UserInfo) {}
+    rpc GetUserFavArticle(UserID) returns (article.Article) {}
+}

@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = "github.com/vaibhav/pb-demo/proto/user";
+
+message UserID {  
+    int64 ID = 1;  
+}
+
+message UserInfo {
+    int64 ID = 1;
+    string Name = 2;
+    int64 Age = 3;
+    gender Gender = 4;  // our own defined type using enum 
+    // to restrict data entry
+    enum gender {
+        // starts with 0
+        MALE = 0;
+        FEMALE = 1;
+    }
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+package article;
+option go_package = "github.com/vaibhav/pb-demo/proto/article";
+
+message Article {
+    repeated Article Articles = 1;
+    
+    // nested messages 
+    message Article {
+        int64 ID = 1;
+        string Title = 2;
+    }
+}
+
